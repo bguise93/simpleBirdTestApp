@@ -1,25 +1,76 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="hideRedHideBlue" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="birdBackground" translatesAutoresizingMaskIntoConstraints="NO" id="edU-U6-64L">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JP-x1-OK1">
+                                <rect key="frame" x="20" y="510" width="131" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="FU RED CIRCLE">
+                                    <color key="titleColor" red="1" green="0.041046944598614132" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionRed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sji-GQ-cMm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fw4-rb-2DZ">
+                                <rect key="frame" x="163" y="510" width="137" height="30"/>
+                                <state key="normal" title="FU BLUE CIRCLE"/>
+                                <connections>
+                                    <action selector="actionBlue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bn2-Es-6wr"/>
+                                </connections>
+                            </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blueCircleCropped" translatesAutoresizingMaskIntoConstraints="NO" id="Ymu-SE-40e">
+                                <rect key="frame" x="155" y="181" width="39" height="40"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="redCircle" translatesAutoresizingMaskIntoConstraints="NO" id="TNe-TS-hv1">
+                                <rect key="frame" x="115" y="184" width="36" height="34"/>
+                            </imageView>
+                            <button hidden="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPw-wS-pGM">
+                                <rect key="frame" x="-238" y="-615" width="839" height="1392"/>
+                                <state key="normal" title="reset" image="RESET" backgroundImage="RESET"/>
+                                <connections>
+                                    <action selector="actionReset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iPa-Qi-BMp"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="buttonBlueEye" destination="fw4-rb-2DZ" id="EBV-im-QbL"/>
+                        <outlet property="buttonRedEye" destination="0JP-x1-OK1" id="8wa-zp-7Jg"/>
+                        <outlet property="resetButton" destination="QPw-wS-pGM" id="pX1-7h-ssh"/>
+                        <outlet property="showBlueEye" destination="Ymu-SE-40e" id="dk0-fN-41u"/>
+                        <outlet property="showRedEye" destination="TNe-TS-hv1" id="zpp-5W-bs4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="290"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="RESET" width="356" height="99"/>
+        <image name="birdBackground" width="744" height="1392"/>
+        <image name="blueCircleCropped" width="683" height="683"/>
+        <image name="redCircle" width="1280" height="1280"/>
+    </resources>
 </document>
